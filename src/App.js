@@ -1,23 +1,33 @@
 import logo from './logo.svg';
 import './App.css';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button } from 'react-bootstrap';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import Main from './components/Main/Main';
+import Home from './components/Home/Home';
+import About from './components/About/About';
+import Search from './components/Search/Search';
+ 
+
+
 function App() {
+
+  const restaurant   = createBrowserRouter([
+    {path:"/",element:<Main></Main>,children:[
+      {path:'/home',element:<Home></Home>},
+      {path:'/about',element:<About></About>},
+      {path:'/search',element:<Search></Search>}
+   
+    ]},
+
+
+    {path:'*',element: <div>Page Not found....!!!!!!!!!! Error 404!!!</div>}
+  ])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <RouterProvider router={restaurant }></RouterProvider>
     </div>
   );
 }
