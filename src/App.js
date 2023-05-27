@@ -9,6 +9,7 @@ import Home from './components/Home/Home';
 import About from './components/About/About';
 import Search from './components/Search/Search';
 import FoodDetails from './components/FoodDetails/FoodDetails';
+import Details2 from './components/Details2/Details2';
  
 
 
@@ -27,9 +28,16 @@ function App() {
       {
         path:'/FoodDetails/:category',
         loader:async({params})=>{
-          return fetch(`www.themealdb.com/api/json/v1/1/lookup.php?i=${params.category}`)
+          return fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${params.category}`)
         },
         element:<FoodDetails></FoodDetails>
+      },
+      {
+        path:'/Details2/:idMeal',
+        loader:async({params})=>{
+          return fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${params.idMeal}`)
+        },
+        element:<Details2></Details2>
       }
    
     ]},

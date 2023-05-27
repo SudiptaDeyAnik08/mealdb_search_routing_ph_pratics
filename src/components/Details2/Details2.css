@@ -1,0 +1,40 @@
+.bacground{
+    background-color: rgb(244, 242, 242);
+}
+
+.parentDiv{
+    display: flex;
+    
+}
+.childDiv2{
+    margin-top: 30px;
+    text-align: left;
+}
+
+.preparingInstruction{
+    width: 800px;
+    text-align: justify;
+}
+.image{
+    width: 500px;
+    margin: 20px;
+}
+
+.image img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.youtube p{
+    font-size: xx-large;
+    font-weight: bolder;
+    margin: 20px;
+
+  
+}
+
+.youtube{
+
+    margin: 20px;
+    display: flex;
+}

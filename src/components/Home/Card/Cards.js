@@ -12,11 +12,12 @@ function Cards({ data }) {
     return (
         <div >
 
-            <Card className='card1 bg-dark d-flex mb-4' style={{ width: '18rem' }}>
+            <Card className='card1 bg-dark d-flex mb-4 ' style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={strCategoryThumb} />
                 <Card.Body>
-                    <Card.Title>{strCategory}</Card.Title>
-                    <Button variant="primary" > <Link style={{color:'white'}} to={`/foodDetails/${data.idCategory}`}>Go Details</Link> </Button>
+                    <Card.Title style={{color:"white"}} >Category: {strCategory}</Card.Title>
+                    <h2>dgas</h2>
+                    <Button variant="primary" > <Link style={{color:'white'}} to={`/foodDetails/${data.strCategory}`}>Go Details</Link> </Button>
                 </Card.Body>
             </Card>
 
